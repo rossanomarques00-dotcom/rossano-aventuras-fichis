@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: rossano-aventura-fichis
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: MAX_TOTAL_PLAYERS
+        value: "500"
+      - key: MAX_PLAYERS_PER_ROOM
+        value: "50"
